@@ -31,7 +31,7 @@ export const SearchBar = ({ placeholder, data }) => {
 
 
           <div className="dataResult">
-            {filterData.map((value, key) => {
+            {filterData.slice(0,15).map((value, key) => {
               return <a
                 key={key}
                 className='dataItem'
