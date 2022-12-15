@@ -12,8 +12,11 @@ export const SearchBar = ({ placeholder, data }) => {
     const newFilter = data.filter(value => {
       return value.title.toLowerCase().includes(searchWord.toLowerCase());
     });
-
-    setfilterData(newFilter);
+    if (searchWord === '') {
+      setfilterData([]);
+    } else {
+      setfilterData(newFilter);
+    }
   };
 
   return (
@@ -28,10 +31,8 @@ export const SearchBar = ({ placeholder, data }) => {
       </div>
       {
         filterData.length != 0 && (
-
-
           <div className="dataResult">
-            {filterData.slice(0,15).map((value, key) => {
+            {filterData.slice(0, 15).map((value, key) => {
               return <a
                 key={key}
                 className='dataItem'
@@ -39,12 +40,9 @@ export const SearchBar = ({ placeholder, data }) => {
                 target='_blank'
               >{value.title}</a>;
             })}
-
-
           </div>
         )
       }
-
     </div>
   );
 };
