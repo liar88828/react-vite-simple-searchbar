@@ -10,7 +10,7 @@ export const SearchBar = ({ placeholder, data }) => {
   const handleFilter = e => {
     const searchWord = e.target.value;
     const newFilter = data.filter(value => {
-      return value.title.includes(searchWord);
+      return value.title.toLowerCase().includes(searchWord.toLowerCase());
     });
 
     setfilterData(newFilter);
