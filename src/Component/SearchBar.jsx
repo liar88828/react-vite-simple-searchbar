@@ -3,7 +3,7 @@ import './SearchBar.css';
 import SearchIcon from '@mui/icons-material/Search';
 
 
-export const SearchBar = ({ placeholder, data: { } }) => {
+export const SearchBar = ({ placeholder, data }) => {
   return (
     <div className='search'>
       <h1>Search
@@ -14,7 +14,13 @@ export const SearchBar = ({ placeholder, data: { } }) => {
           <SearchIcon />
         </div>
       </div>
-      {/* <div className="dataResult"></div> */}
+      <div className="dataResult">
+{data.map((value,key)=>{
+  return <div>{value.title}</div>
+})}
+
+
+      </div>
     </div>
   );
 };
