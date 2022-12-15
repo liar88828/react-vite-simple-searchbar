@@ -31,7 +31,7 @@ export const SearchBar = ({ placeholder, data }) => {
 
 
           <div className="dataResult">
-            {filterData.map((value, key) =>; {
+            {filterData.map((value, key) => {
               return <a
                 key={key}
                 className='dataItem'
